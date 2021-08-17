@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply select-none text-gray-800 font-roboto tracking-wider;
+  }
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
+  p {
+    @apply text-xs;
+  }
+  input,
+  select,
+  option,
+  textarea,
+  button {
+    @apply focus:outline-none;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+  main {
+    @apply relative w-screen h-screen;
+  }
+}
+
+@layer components {
+  /* nabvar */
+  .nabvar {
+    @apply absolute bg-white bottom-0 lg:top-0 
+    w-screen lg:w-20 h-16 lg:h-screen
+    grid grid-flow-col lg:grid-flow-row
+    grid-cols-5 lg:grid-cols-none	lg:grid-rows-5
+    border-t lg:border-t-0 lg:border-r 
+    border-gray-400 border-solid;
+  }
+  .nabvar_desktop {
+    @apply absolute top-0 h-screen w-20
+    grid grid-flow-row grid-rows-5
+    border-r border-gray-400 border-solid;
+  }
+  .navbar_icon {
+    @apply text-gray-500 cursor-pointer
+    flex flex-col justify-center items-center;
+  }
+
+  /* meal */
+  .add_btn {
+    @apply flex flex-col justify-center items-center
+    w-16 h-16 shadow-lg rounded-md
+    border border-gray-600 border-solid;
+  }
+  .cals {
+    @apply flex justify-center items-end pt-6;
+  }
+  .meal_data_slider {
+    @apply top-10 my-3;
+  }
+  .cals_donuts {
+    @apply mx-10 my-5;
+  }
+
+  /* weight */
+  .add_weight {
+    @apply flex justify-center items-center bg-yellow-400
+    w-48 h-14 rounded-full;
+  }
+  .weight {
+    @apply flex justify-center items-end pt-6;
+  }
+
+  /* date slider */
+  .date_slider {
+    @apply flex justify-between mx-20;
+  }
+
+  /* paw */
+  .paw {
+    animation: paw 3s infinite ease-in-out 0.8s alternate;
+    transition: 1.5s ease-in-out;
+    @apply text-yellow-400 w-20 h-20 mb-10
+    flex justify-center items-center;
+  }
+}
+
+@keyframes paw {
+  0% {
+    transform: translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(7deg);
+  }
+}
