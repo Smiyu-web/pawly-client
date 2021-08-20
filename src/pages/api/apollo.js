@@ -17,7 +17,7 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: process.env.REACT_APP_PRODUCTION_API_URL }),
+  new HttpLink({ uri: process.env.NEXT_PUBLIC_PRODUCTION_API_URL }),
 ]);
 
 export const client = new ApolloClient({
