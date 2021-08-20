@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
+import Swal from "sweetalert2";
 import { useMutation } from "@apollo/client";
 
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -22,19 +23,39 @@ const AddWeight = () => {
   const [modalIsOpen, setIsOpen] = useState(true);
   const [weight, setWeight] = useState();
 
-  const [addWeight, { error }] = useMutation(CREATE_WEIGHT_MUTATION);
+  const [addWeight, { data, loading, error }] = useMutation(
+    CREATE_WEIGHT_MUTATION
+  );
 
-  const submit = () => {
-    console.log(weight);
+  const submit = (e) => {
+    e.preventDefault();
+
+    // weight is string type.
+    console.log("weight type", typeof weight);
+
     addWeight({
       variables: {
-        weightNum: weight,
+        weightNum: parseFloat(weight),
       },
-    });
-
-    if (error) {
-      console.log(error);
-    }
+    })
+      .then(({ data }) => {
+        console.log("Insert data", data);
+        Swal.fire({
+          title: "Success insert data!",
+          icon: "success",
+        });
+      })
+      .catch((err) => {
+        console.log("Something wrong", err);
+        Swal.fire({
+          title: "Something wrong!",
+          text: "Cannot insert data.",
+          icon: "error",
+        });
+      })
+      .finally(() => {
+        closeModal();
+      });
   };
 
   const openModal = () => {
