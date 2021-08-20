@@ -1,17 +1,17 @@
 import React from "react";
 import Layout from "../components/layout";
-import Weight from "../components/weight/Weight";
+import Meal from "../components/meal/Meal";
 
-const weight = () => {
+const meal = () => {
   const description = "";
-  const title = "";
+  const title = "pawly - meal";
   return (
     <div>
       <Layout description={description} title={title}>
-        <Weight />
+        <Meal />
       </Layout>
     </div>
   );
 };
 
-export default weight;
+export default meal;

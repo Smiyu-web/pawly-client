@@ -47,15 +47,6 @@ const data = {
 };
 
 const options = {
-  // scales: {
-  //   yAxes: [
-  //     {
-  //       ticks: {
-  //         beginAtZero: true,
-  //       },
-  //     },
-  //   ],
-  // },
   plugins: {
     legend: {
       display: false,

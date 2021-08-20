@@ -8,6 +8,8 @@ const Layout = ({ description, title, children }) => {
       <Head>
         <meta name="description" content={description} />
         <meta name="og:title" content={title} />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+
         <title>{title}</title>
       </Head>
       <main>

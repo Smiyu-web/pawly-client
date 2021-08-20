@@ -84,8 +84,25 @@
     @apply flex justify-center items-center bg-yellow-400
     w-48 h-14 rounded-full;
   }
+  .add_weight_btn {
+    @apply flex justify-center items-center bg-yellow-400
+    w-24 h-10 rounded-full;
+  }
   .weight {
     @apply flex justify-center items-end pt-6;
+  }
+  .input_qty {
+    @apply flex flex-col p-2 mb-2 w-56
+    border-b border-solid border-gray-400;
+  }
+  .input_label {
+    @apply text-xs font-light mb-1;
+  }
+  .input_btn {
+    @apply w-72 h-14 my-8 cursor-pointer 
+    border border-red-300 border-solid rounded-md bg-red-300
+    text-white font-semibold tracking-wider  
+    outline-none focus:outline-none;
   }
 
   /* date slider */

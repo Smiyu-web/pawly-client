@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-export const CREATE_USER_MUTATION = gql`
-  mutation Weight($weightNum: String!) {
+export const CREATE_WEIGHT_MUTATION = gql`
+  mutation Weight($weightNum: Float!) {
     addWeight(weightNum: $weightNum) {
       id
     }

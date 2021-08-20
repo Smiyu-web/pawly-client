@@ -3,7 +3,7 @@ import HomePage from "../components/home/HomePage";
 
 export default function Home() {
   const description = "";
-  const title = "";
+  const title = "pawly";
   return (
     <div>
       <Layout description={description} title={title}>
