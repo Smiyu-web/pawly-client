@@ -17,7 +17,7 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 
 const link = from([
   errorLink,
-  new HttpLink({ uri: "https://pawly-app-server.herokuapp.com/graphql" }),
+  new HttpLink({ uri: process.env.REACT_APP_PRODUCTION_API_URL }),
 ]);
 
 export const client = new ApolloClient({
