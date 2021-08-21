@@ -4,7 +4,7 @@ export const LOAD_WEIGHTS = gql`
   query {
     weights {
       weightNum
-      createdAt
+      day
     }
   }
 `;

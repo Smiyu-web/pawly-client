@@ -5,6 +5,7 @@ export const CREATE_WEIGHT_MUTATION = gql`
     addWeight(weightNum: $weightNum) {
       id
       weightNum
+      day
       createdAt
     }
   }
