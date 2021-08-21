@@ -10,13 +10,13 @@ const Weight = () => {
   const { error, loading, data } = useQuery(LOAD_WEIGHTS);
   const [weights, setWeights] = useState([]);
 
-  useEffect(() => {
-    if (data) {
-      console.log(data);
+  // useEffect(() => {
+  //   if (data) {
+  //     console.log(data);
 
-      // setWeights(data);
-    }
-  }, [data]);
+  //     // setWeights(data);
+  //   }
+  // }, [data]);
 
   return (
     <div>
