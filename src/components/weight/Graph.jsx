@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "@apollo/client";
+import { LOAD_WEIGHTS } from "../../GraphQL/Mutations";
 import { Line } from "react-chartjs-2";
 
-const data = {
+const chart_data = {
   labels: [
     "7/1",
     "7/2",
@@ -54,10 +56,15 @@ const options = {
   },
 };
 
-const Graph = () => (
-  <div className="w-80vw">
-    <Line data={data} options={options} />
-  </div>
-);
+const Graph = () => {
+  // console.log(props);
+  return (
+    <div className="w-screen flex justify-center items-center my-10">
+      <div className="w-70vw">
+        <Line data={chart_data} options={options} />
+      </div>
+    </div>
+  );
+};
 
 export default Graph;
