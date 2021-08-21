@@ -15,7 +15,10 @@ module.exports = {
         roboto: ["Roboto", "sans-serif"],
       },
       height: {},
-      width: { "80vw": "80vw" },
+      width: {
+        "70vw": "70vw",
+        "80vw": "80vw",
+      },
     },
     screens: {
       all: "0px",

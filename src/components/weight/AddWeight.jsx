@@ -71,7 +71,6 @@ const AddWeight = () => {
   const month = getDay.getMonth() + 1;
   const date = getDay.getDate();
   const today = year + "/" + month + "/" + date;
-  console.log(getDay);
 
   return (
     <div>

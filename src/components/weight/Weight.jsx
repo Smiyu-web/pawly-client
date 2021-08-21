@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 
+import { LOAD_WEIGHTS } from "../../GraphQL/Mutations";
 import TodayWeight from "./TodayWeight";
 import Graph from "./Graph";
 import AddWeight from "./AddWeight";
-import { LOAD_WEIGHTS } from "../../GraphQL/Queries";
 
 const Weight = () => {
   const { error, loading, data } = useQuery(LOAD_WEIGHTS);
-  const [weights, setWeights] = useState([]);
+  const [result, setResult] = useState();
 
-  // useEffect(() => {
-  //   if (data) {
-  //     console.log(data);
-
-  //     // setWeights(data);
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data) {
+      setResult(data);
+      console.log(data);
+    }
+  }, [data]);
 
   return (
-    <div>
+    <div className="w-screen h-screen flex flex-col items-center justify-center">
       <TodayWeight />
       <Graph />
       <AddWeight />
