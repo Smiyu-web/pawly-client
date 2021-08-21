@@ -7,15 +7,15 @@ import Graph from "./Graph";
 import AddWeight from "./AddWeight";
 
 const Weight = () => {
-  const { error, loading, data } = useQuery(LOAD_WEIGHTS);
-  const [result, setResult] = useState();
+  // const { error, loading, data } = useQuery(LOAD_WEIGHTS);
+  // const [result, setResult] = useState();
 
-  useEffect(() => {
-    if (data) {
-      setResult(data);
-      console.log(data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data) {
+  //     setResult(data);
+  //     console.log(data);
+  //   }
+  // }, [data]);
 
   return (
     <div className="w-screen h-screen flex flex-col items-center justify-center">
