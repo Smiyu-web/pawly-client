@@ -88,9 +88,7 @@
     @apply flex justify-center items-center bg-yellow-400
     w-24 h-10 rounded-full;
   }
-  .weight {
-    @apply flex justify-center items-end pt-6;
-  }
+
   .input_qty {
     @apply flex flex-col p-2 mb-2 w-56
     border-b border-solid border-gray-400;
