@@ -17,10 +17,12 @@ const Nabvar = () => {
 
   return (
     <div className="nabvar">
-      <div className="navbar_icon">
-        <FontAwesomeIcon icon={faHome} size="lg" />
-        <p className="text-xxs font-medium">HOME</p>
-      </div>
+      <Link href="/">
+        <div className="navbar_icon">
+          <FontAwesomeIcon icon={faHome} size="lg" />
+          <p className="text-xxs font-medium">HOME</p>
+        </div>
+      </Link>
       <div className="navbar_icon" onClick={() => router.push("/meal")}>
         <FontAwesomeIcon icon={faUtensils} size="lg" />
         <p className="text-xxs font-medium">MEAL</p>
@@ -29,7 +31,7 @@ const Nabvar = () => {
         <FontAwesomeIcon icon={faWalking} size="lg" />
         <p className="text-xxs font-medium">ACTIVE</p>
       </div>
-      <Link href={"/weight"}>
+      <Link href="/weight">
         <div className="navbar_icon">
           <FontAwesomeIcon icon={faWeight} size="lg" />
           <p className="text-xxs font-medium">WEIGHT</p>
