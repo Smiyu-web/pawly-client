@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Line } from "react-chartjs-2";
 
 const Graph = ({ result }) => {
@@ -29,7 +28,7 @@ const Graph = ({ result }) => {
 
   return (
     <div className="w-screen flex justify-center items-center my-10">
-      <div className="w-70vw">
+      <div className="w-90vw md:w-70vw">
         <Line data={chart_data} options={options} />
       </div>
     </div>

@@ -5,6 +5,7 @@ import { LOAD_WEIGHTS } from "../../GraphQL/Queries";
 import TodayWeight from "./TodayWeight";
 import Graph from "./Graph";
 import AddWeight from "./AddWeight";
+import EditWeight from "./EditWeight";
 
 const Weight = () => {
   const { error, loading, data } = useQuery(LOAD_WEIGHTS);
@@ -26,7 +27,10 @@ const Weight = () => {
     <div className="w-screen h-screen flex flex-col items-center justify-center">
       <TodayWeight result={result} today={today} />
       <Graph result={result} />
-      <AddWeight today={today} />
+      <div className="flex">
+        <AddWeight today={today} />
+        <EditWeight today={today} />
+      </div>
     </div>
   );
 };

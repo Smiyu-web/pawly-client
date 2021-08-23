@@ -18,6 +18,7 @@ module.exports = {
       width: {
         "70vw": "70vw",
         "80vw": "80vw",
+        "90vw": "90vw",
       },
     },
     screens: {

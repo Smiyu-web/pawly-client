@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
-import { LOAD_WEIGHTS } from "../../GraphQL/Queries";
+import React from "react";
 
 const TodayWeight = ({ result, today }) => {
   console.log(today);
