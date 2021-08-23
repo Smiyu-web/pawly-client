@@ -19,7 +19,7 @@ const customStyles = {
   },
 };
 
-const AddWeight = () => {
+const AddWeight = ({ today }) => {
   const [modalIsOpen, setIsOpen] = useState(true);
   const [weight, setWeight] = useState();
 
@@ -65,12 +65,6 @@ const AddWeight = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
-
-  const getDay = new Date();
-  const year = getDay.getFullYear();
-  const month = getDay.getMonth() + 1;
-  const date = getDay.getDate();
-  const today = year + "/" + month + "/" + date;
 
   return (
     <div>

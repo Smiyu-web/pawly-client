@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { LOAD_WEIGHTS } from "../../GraphQL/Queries";
 
-const TodayWeight = () => {
-  // const { error, loading, data } = useQuery(LOAD_WEIGHTS);
-  // const [result, setResult] = useState();
+const TodayWeight = ({ result, today }) => {
+  console.log(today);
+  console.log(result);
+  const todayWeight = (arr) => {
+    for (let i = 0; i < arr?.length; i++) {
+      if (arr[i].day === today) return arr[i].weightNum;
+    }
+    return 0.0;
+  };
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setResult(data);
-  //   }
-  // }, [data]);
+  console.log(todayWeight(result));
 
   return (
     <div className="flex">
