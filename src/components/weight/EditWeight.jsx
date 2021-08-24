@@ -16,9 +16,13 @@ const customStyles = {
   },
 };
 
-const AddWeight = ({ today }) => {
+const AddWeight = ({ today, todayWeight }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [weight, setWeight] = useState();
+  // console.log(todayData?.weightNum);
+  // const todayWeight = todayData?.weightNum;
+  console.log(todayWeight);
+  const [weight, setWeight] = useState(todayWeight);
+  console.log(weight);
 
   const submit = (e) => {
     e.preventDefault();
@@ -58,8 +62,10 @@ const AddWeight = ({ today }) => {
                 <label className="input_label">Today's Weight</label>
                 <input
                   type="number"
-                  id="qty"
-                  name="qty"
+                  id="weight"
+                  name="weight"
+                  value={todayWeight}
+                  step="0.01"
                   style={{ textAlignLast: "center" }}
                   onChange={(e) => setWeight(e.target.value)}
                 />

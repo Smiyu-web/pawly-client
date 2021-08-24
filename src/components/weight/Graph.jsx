@@ -7,6 +7,7 @@ const Graph = ({ result }) => {
   result?.map((r) => {
     return daysArr.push(r.day) && weightArr.push(r.weightNum);
   });
+
   const chart_data = {
     labels: daysArr,
     datasets: [

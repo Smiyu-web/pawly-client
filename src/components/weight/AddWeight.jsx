@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import Swal from "sweetalert2";
 import { useMutation } from "@apollo/client";
@@ -6,6 +6,7 @@ import { useMutation } from "@apollo/client";
 import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CREATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
+import { today } from "./findData";
 
 const customStyles = {
   content: {
@@ -19,8 +20,8 @@ const customStyles = {
   },
 };
 
-const AddWeight = ({ today }) => {
-  const [modalIsOpen, setIsOpen] = useState(true);
+const AddWeight = ({ today, todayData }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [weight, setWeight] = useState();
 
   const [addWeight, { data, loading, error }] = useMutation(
@@ -92,8 +93,9 @@ const AddWeight = ({ today }) => {
                 <label className="input_label">Today's Weight</label>
                 <input
                   type="number"
-                  id="qty"
-                  name="qty"
+                  id="weight"
+                  name="weight"
+                  step="0.01"
                   style={{ textAlignLast: "center" }}
                   onChange={(e) => setWeight(e.target.value)}
                 />
