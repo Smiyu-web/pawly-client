@@ -1,10 +1,10 @@
-## MERN application with GraphQL
+# MERN application with GraphQL
 
 https://pawly.vercel.app/
 
 Pawly is a puppy health management application. Able to keep puppy's weight, what they eat, and how long they do exercise.
 
-> # Front End
+> ## Front End
 
 - React
 
@@ -22,7 +22,7 @@ Pawly is a puppy health management application. Able to keep puppy's weight, wha
   - React Modal
   - Sweet Alert
 
-> # Back End
+> ## Back End
 
 - MongoDB
 - Express
