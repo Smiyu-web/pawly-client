@@ -1,20 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useQuery } from "@apollo/client";
-import { LOAD_WEIGHTS } from "../../GraphQL/Queries";
+import React from "react";
 
-const TodayWeight = () => {
-  // const { error, loading, data } = useQuery(LOAD_WEIGHTS);
-  // const [result, setResult] = useState();
-
-  // useEffect(() => {
-  //   if (data) {
-  //     setResult(data);
-  //   }
-  // }, [data]);
-
+const TodayWeight = ({ todayData }) => {
   return (
     <div className="flex">
-      <h1>7.8</h1>
+      {todayData ? <h1>{todayData.weightNum}</h1> : <h1>0.0</h1>}
       <div className="ml-2">kg</div>
     </div>
   );

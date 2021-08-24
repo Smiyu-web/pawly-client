@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
-import Swal from "sweetalert2";
-import { useMutation } from "@apollo/client";
 
-import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPen, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CREATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
-import { today } from "./findData";
 
 const customStyles = {
   content: {
@@ -20,43 +16,16 @@ const customStyles = {
   },
 };
 
-const AddWeight = ({ today, todayData }) => {
+const AddWeight = ({ today, todayWeight }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [weight, setWeight] = useState();
-
-  const [addWeight, { data, loading, error }] = useMutation(
-    CREATE_WEIGHT_MUTATION
-  );
+  // console.log(todayData?.weightNum);
+  // const todayWeight = todayData?.weightNum;
+  console.log(todayWeight);
+  const [weight, setWeight] = useState(todayWeight);
+  console.log(weight);
 
   const submit = (e) => {
     e.preventDefault();
-
-    // weight is string type.
-    console.log("weight type", typeof weight);
-
-    addWeight({
-      variables: {
-        weightNum: parseFloat(weight),
-      },
-    })
-      .then(({ data }) => {
-        console.log("Insert data", data);
-        Swal.fire({
-          title: "Success insert data!",
-          icon: "success",
-        });
-      })
-      .catch((err) => {
-        console.log("Something wrong", err);
-        Swal.fire({
-          title: "Something wrong!",
-          text: "Cannot insert data.",
-          icon: "error",
-        });
-      })
-      .finally(() => {
-        closeModal();
-      });
   };
 
   const openModal = () => {
@@ -70,8 +39,8 @@ const AddWeight = ({ today, todayData }) => {
   return (
     <div>
       <button onClick={openModal} className="weight_btn">
-        <FontAwesomeIcon icon={faPlus} size="lg" />
-        <h6 className="mt-2">ADD WEIGHT</h6>
+        <FontAwesomeIcon icon={faPen} size="lg" />
+        <h6 className="mt-2">EDIT WEIGHT</h6>
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -95,6 +64,7 @@ const AddWeight = ({ today, todayData }) => {
                   type="number"
                   id="weight"
                   name="weight"
+                  value={todayWeight}
                   step="0.01"
                   style={{ textAlignLast: "center" }}
                   onChange={(e) => setWeight(e.target.value)}
@@ -102,7 +72,7 @@ const AddWeight = ({ today, todayData }) => {
               </div>
             </div>
             <div className="text-center flex justify-center">
-              <input className="add" type="submit" value="Add" />
+              <input className="add" type="submit" value="Edit" />
             </div>
           </form>
         </div>
