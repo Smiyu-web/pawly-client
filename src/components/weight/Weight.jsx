@@ -6,10 +6,12 @@ import TodayWeight from "./TodayWeight";
 import Graph from "./Graph";
 import AddWeight from "./AddWeight";
 import EditWeight from "./EditWeight";
+import Loading from "../ui/Loading";
 
 const Weight = () => {
   const { error, loading, data } = useQuery(LOAD_WEIGHTS);
   const [result, setResult] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getDay = new Date();
   const year = getDay.getFullYear();
@@ -24,20 +26,31 @@ const Weight = () => {
   const todayWeight = todayData?.weightNum;
 
   useEffect(() => {
-    if (data) {
-      setResult(data.weights);
+    try {
+      setIsLoading(true);
+      if (data) {
+        setResult(data.weights);
+      }
+    } finally {
+      setIsLoading(false);
     }
   }, [data]);
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center">
-      <TodayWeight todayData={todayData} today={today} />
-      <Graph result={result} />
-      <div className="flex">
-        <AddWeight today={today} todayData={todayData} />
-        <EditWeight today={today} todayWeight={todayWeight} />
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <Loading isLoading={isLoading} />
+      ) : (
+        <div className="w-screen h-screen flex flex-col items-center justify-center">
+          <TodayWeight todayData={todayData} today={today} />
+          <Graph result={result} />
+          <div className="flex">
+            <AddWeight today={today} todayData={todayData} />
+            <EditWeight today={today} todayWeight={todayWeight} />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

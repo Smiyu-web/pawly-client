@@ -14,8 +14,8 @@ const Graph = ({ result }) => {
       {
         data: weightArr,
         fill: false,
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgba(255, 99, 132, 0.2)",
+        backgroundColor: "#FBBF23",
+        borderColor: "#fbbe2345",
       },
     ],
   };

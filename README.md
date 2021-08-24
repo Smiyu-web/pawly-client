@@ -26,6 +26,4 @@ Pawly is a puppy health management application. Able to keep puppy's weight, wha
 
 - MongoDB
 - Express
-- Apollo Server Express
-- Database
-  - MongoDB
+  - Apollo Server Express

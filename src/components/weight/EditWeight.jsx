@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
+import { useMutation } from "@apollo/client";
+import Swal from "sweetalert2";
 
 import { faPen, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CREATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
 
 const customStyles = {
   content: {
@@ -16,16 +19,48 @@ const customStyles = {
   },
 };
 
-const AddWeight = ({ today, todayWeight }) => {
+const EditWeight = ({ today, todayWeight }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  // console.log(todayData?.weightNum);
-  // const todayWeight = todayData?.weightNum;
-  console.log(todayWeight);
-  const [weight, setWeight] = useState(todayWeight);
-  console.log(weight);
+  const [weight, setWeight] = useState();
+
+  const [updateWeight, { data, loading, error }] = useMutation(
+    CREATE_WEIGHT_MUTATION
+  );
+
+  useEffect(() => {
+    setWeight(todayWeight);
+  }, [todayWeight]);
 
   const submit = (e) => {
     e.preventDefault();
+
+    // weight is string type.
+    console.log("weight type", typeof weight);
+
+    updateWeight({
+      variables: {
+        day: today,
+        updateWeight: parseFloat(weight),
+      },
+    })
+      .then(({ data }) => {
+        console.log("Insert data", data);
+        Swal.fire({
+          title: "Success update weight!",
+          icon: "success",
+        });
+      })
+      .catch((err) => {
+        console.log("Something wrong", err);
+        Swal.fire({
+          title: "Something wrong!",
+          text: "Cannot update weight.",
+          icon: "error",
+        });
+      })
+      .finally(() => {
+        closeModal();
+      });
   };
 
   const openModal = () => {
@@ -64,7 +99,7 @@ const AddWeight = ({ today, todayWeight }) => {
                   type="number"
                   id="weight"
                   name="weight"
-                  value={todayWeight}
+                  value={weight}
                   step="0.01"
                   style={{ textAlignLast: "center" }}
                   onChange={(e) => setWeight(e.target.value)}
@@ -81,4 +116,4 @@ const AddWeight = ({ today, todayWeight }) => {
   );
 };
 
-export default AddWeight;
+export default EditWeight;

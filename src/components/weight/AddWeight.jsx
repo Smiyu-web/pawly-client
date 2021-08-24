@@ -6,7 +6,6 @@ import { useMutation } from "@apollo/client";
 import { faTimes, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CREATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
-import { today } from "./findData";
 
 const customStyles = {
   content: {
@@ -42,7 +41,7 @@ const AddWeight = ({ today, todayData }) => {
       .then(({ data }) => {
         console.log("Insert data", data);
         Swal.fire({
-          title: "Success insert data!",
+          title: "Success add weight!",
           icon: "success",
         });
       })
@@ -50,7 +49,7 @@ const AddWeight = ({ today, todayData }) => {
         console.log("Something wrong", err);
         Swal.fire({
           title: "Something wrong!",
-          text: "Cannot insert data.",
+          text: "Cannot add weight.",
           icon: "error",
         });
       })
