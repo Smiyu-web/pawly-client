@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 import { faPen, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CREATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
+import { UPDATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
 
 const customStyles = {
   content: {
@@ -24,7 +24,7 @@ const EditWeight = ({ today, todayWeight }) => {
   const [weight, setWeight] = useState();
 
   const [updateWeight, { data, loading, error }] = useMutation(
-    CREATE_WEIGHT_MUTATION
+    UPDATE_WEIGHT_MUTATION
   );
 
   useEffect(() => {
@@ -36,6 +36,8 @@ const EditWeight = ({ today, todayWeight }) => {
 
     // weight is string type.
     console.log("weight type", typeof weight);
+    console.log(today);
+    console.log(weight);
 
     updateWeight({
       variables: {
@@ -44,9 +46,9 @@ const EditWeight = ({ today, todayWeight }) => {
       },
     })
       .then(({ data }) => {
-        console.log("Insert data", data);
+        console.log("Updated data", data);
         Swal.fire({
-          title: "Success update weight!",
+          title: "Success updated weight!",
           icon: "success",
         });
       })

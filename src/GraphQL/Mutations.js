@@ -11,9 +11,13 @@ export const CREATE_WEIGHT_MUTATION = gql`
   }
 `;
 
-// updateWeight(day: $day, updateWeightNum: $updateWeightNum) {
-//   id
-//   weightNum
-//   day
-//   createdAt
-// }
+export const UPDATE_WEIGHT_MUTATION = gql`
+  mutation Weight($day: String!, $updateWeightNum: Float!) {
+    updateWeight(day: $day, updateWeightNum: $updateWeightNum) {
+      id
+      weightNum
+      day
+      createdAt
+    }
+  }
+`;
