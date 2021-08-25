@@ -8,11 +8,12 @@ export const CREATE_WEIGHT_MUTATION = gql`
       day
       createdAt
     }
-    updateWeight(day: $day, updateWeightNum: $updateWeightNum) {
-      id
-      weightNum
-      day
-      createdAt
-    }
   }
 `;
+
+// updateWeight(day: $day, updateWeightNum: $updateWeightNum) {
+//   id
+//   weightNum
+//   day
+//   createdAt
+// }
