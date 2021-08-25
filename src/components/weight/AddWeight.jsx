@@ -19,7 +19,7 @@ const customStyles = {
   },
 };
 
-const AddWeight = ({ today, todayData }) => {
+const AddWeight = ({ today }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [weight, setWeight] = useState();
 

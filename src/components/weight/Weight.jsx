@@ -25,31 +25,37 @@ const Weight = () => {
   const todayData = getDataByDay();
   const todayWeight = todayData?.weightNum;
 
+  // useEffect(() => {
+  //   try {
+  //     setIsLoading(true);
+  //     if (data) {
+  //       setResult(data.weights);
+  //     }
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }, [data]);
+
   useEffect(() => {
-    try {
-      setIsLoading(true);
-      if (data) {
-        setResult(data.weights);
-      }
-    } finally {
-      setIsLoading(false);
+    if (data) {
+      setResult(data.weights);
     }
   }, [data]);
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <Loading isLoading={isLoading} />
-      ) : (
-        <div className="w-screen h-screen flex flex-col items-center justify-center">
-          <TodayWeight todayData={todayData} today={today} />
-          <Graph result={result} />
-          <div className="flex">
-            <AddWeight today={today} todayData={todayData} />
-            <EditWeight today={today} todayWeight={todayWeight} />
-          </div>
+      ) : ( */}
+      <div className="w-screen h-screen flex flex-col items-center justify-center">
+        <TodayWeight todayData={todayData} today={today} />
+        <Graph result={result} />
+        <div className="flex">
+          <AddWeight today={today} />
+          <EditWeight today={today} todayWeight={todayWeight} />
         </div>
-      )}
+      </div>
+      {/* )} */}
     </>
   );
 };
