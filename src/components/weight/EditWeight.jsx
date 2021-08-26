@@ -50,6 +50,7 @@ const EditWeight = ({ today, todayData }) => {
         Swal.fire({
           title: "Success updated weight!",
           icon: "success",
+          timer: 2000,
         });
       })
       .catch((err) => {

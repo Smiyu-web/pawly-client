@@ -5,7 +5,8 @@ import SyncLoader from "react-spinners/SyncLoader";
 import Layout from "../components/layout";
 
 const Custom404 = () => {
-  const description = "";
+  const description =
+    "Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.";
   const title = "pawly - 404";
 
   let [loading, setLoading] = useState(true);

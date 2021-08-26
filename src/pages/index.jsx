@@ -3,7 +3,8 @@ import HomePage from "../components/home/HomePage";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const description = "";
+  const description =
+    "Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.";
   const title = "pawly";
   return (
     <Layout description={description} title={title}>

@@ -45,6 +45,7 @@ const AddWeight = ({ today }) => {
         Swal.fire({
           title: "Success add weight!",
           icon: "success",
+          timer: 2000,
         });
       })
       .catch((err) => {
