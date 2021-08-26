@@ -6,10 +6,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      fontSize: {
-        "3xs": ".55rem",
-        xxs: ".65rem",
-      },
+      fontSize: {},
       colors: {},
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
