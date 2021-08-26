@@ -1,6 +1,7 @@
 # CRUD application with GraphQL
 
-https://pawly.vercel.app/
+WEBSITE : https://pawly.vercel.app/
+SERVER GITHUB : https://github.com/Smiyu-web/pawly-server
 
 Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.
 
