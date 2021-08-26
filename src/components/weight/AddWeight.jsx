@@ -72,7 +72,7 @@ const AddWeight = ({ today }) => {
     <div>
       <button onClick={openModal} className="weight_btn">
         <FontAwesomeIcon icon={faPlus} size="lg" />
-        <h6 className="mt-2">ADD WEIGHT</h6>
+        <h6 className="mt-2">ADD</h6>
       </button>
       <Modal
         isOpen={modalIsOpen}

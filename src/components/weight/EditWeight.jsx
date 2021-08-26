@@ -19,9 +19,11 @@ const customStyles = {
   },
 };
 
-const EditWeight = ({ today, todayWeight }) => {
+const EditWeight = ({ today, todayData }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [weight, setWeight] = useState();
+  const todayWeight = todayData?.weightNum;
+  const id = todayData?.id;
 
   const [updateWeight, { data, loading, error }] = useMutation(
     UPDATE_WEIGHT_MUTATION
@@ -36,13 +38,11 @@ const EditWeight = ({ today, todayWeight }) => {
 
     // weight is string type.
     console.log("weight type", typeof weight);
-    console.log(today);
-    console.log(weight);
 
     updateWeight({
       variables: {
-        day: today,
-        updateWeight: parseFloat(weight),
+        id: id,
+        updateWeightNum: parseFloat(weight),
       },
     })
       .then(({ data }) => {
@@ -77,7 +77,7 @@ const EditWeight = ({ today, todayWeight }) => {
     <div>
       <button onClick={openModal} className="weight_btn">
         <FontAwesomeIcon icon={faPen} size="lg" />
-        <h6 className="mt-2">EDIT WEIGHT</h6>
+        <h6 className="mt-2">EDIT</h6>
       </button>
       <Modal
         isOpen={modalIsOpen}
