@@ -5,7 +5,8 @@ import Layout from "../components/layout";
 import Weight from "../components/weight/Weight";
 
 const weight = () => {
-  const description = "";
+  const description =
+    "Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.";
   const title = "pawly - weight";
   return (
     <Layout description={description} title={title}>

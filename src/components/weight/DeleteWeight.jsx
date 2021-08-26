@@ -23,6 +23,7 @@ const DeleteWeight = ({ todayData }) => {
         Swal.fire({
           title: "Success deleted weight!",
           icon: "success",
+          timer: 2000,
         });
       })
       .catch((err) => {
