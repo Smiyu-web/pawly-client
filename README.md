@@ -4,9 +4,11 @@ WEBSITE : https://pawly.vercel.app/
 
 SERVER GITHUB : https://github.com/Smiyu-web/pawly-server
 
+> ## ABOUT
+
 Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.
 
-> ## Front End
+### Front End
 
 - React
 
@@ -24,7 +26,7 @@ Pawly is a puppy health management application. Able to keep a redord of puppy's
   - React Modal
   - Sweet Alert
 
-> ## Back End
+### Back End
 
 - MongoDB
 - Express
