@@ -7,6 +7,7 @@ import Graph from "./Graph";
 import AddWeight from "./AddWeight";
 import EditWeight from "./EditWeight";
 import Loading from "../ui/Loading";
+import DeleteWeight from "./DeleteWeight";
 
 const Weight = () => {
   const { error, loading, data } = useQuery(LOAD_WEIGHTS);
@@ -52,7 +53,8 @@ const Weight = () => {
         <Graph result={result} />
         <div className="flex">
           <AddWeight today={today} />
-          <EditWeight today={today} todayWeight={todayWeight} />
+          <EditWeight today={today} todayData={todayData} />
+          <DeleteWeight todayData={todayData} />
         </div>
       </div>
       {/* )} */}

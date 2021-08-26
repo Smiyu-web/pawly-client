@@ -21,7 +21,7 @@ const customStyles = {
 
 const AddWeight = ({ today }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [weight, setWeight] = useState();
+  const [weight, setWeight] = useState(0.0);
 
   const [addWeight, { data, loading, error }] = useMutation(
     CREATE_WEIGHT_MUTATION
@@ -32,6 +32,8 @@ const AddWeight = ({ today }) => {
 
     // weight is string type.
     console.log("weight type", typeof weight);
+    console.log(today);
+    console.log(weight);
 
     addWeight({
       variables: {
@@ -70,7 +72,7 @@ const AddWeight = ({ today }) => {
     <div>
       <button onClick={openModal} className="weight_btn">
         <FontAwesomeIcon icon={faPlus} size="lg" />
-        <h6 className="mt-2">ADD WEIGHT</h6>
+        <h6 className="mt-2">ADD</h6>
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -94,6 +96,7 @@ const AddWeight = ({ today }) => {
                   type="number"
                   id="weight"
                   name="weight"
+                  value={weight}
                   step="0.01"
                   style={{ textAlignLast: "center" }}
                   onChange={(e) => setWeight(e.target.value)}

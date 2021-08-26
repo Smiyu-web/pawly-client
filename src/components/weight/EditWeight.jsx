@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 import { faPen, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { CREATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
+import { UPDATE_WEIGHT_MUTATION } from "../../GraphQL/Mutations";
 
 const customStyles = {
   content: {
@@ -19,12 +19,14 @@ const customStyles = {
   },
 };
 
-const EditWeight = ({ today, todayWeight }) => {
+const EditWeight = ({ today, todayData }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [weight, setWeight] = useState();
+  const todayWeight = todayData?.weightNum;
+  const id = todayData?.id;
 
   const [updateWeight, { data, loading, error }] = useMutation(
-    CREATE_WEIGHT_MUTATION
+    UPDATE_WEIGHT_MUTATION
   );
 
   useEffect(() => {
@@ -39,14 +41,14 @@ const EditWeight = ({ today, todayWeight }) => {
 
     updateWeight({
       variables: {
-        day: today,
-        updateWeight: parseFloat(weight),
+        id: id,
+        updateWeightNum: parseFloat(weight),
       },
     })
       .then(({ data }) => {
-        console.log("Insert data", data);
+        console.log("Updated data", data);
         Swal.fire({
-          title: "Success update weight!",
+          title: "Success updated weight!",
           icon: "success",
         });
       })
@@ -75,7 +77,7 @@ const EditWeight = ({ today, todayWeight }) => {
     <div>
       <button onClick={openModal} className="weight_btn">
         <FontAwesomeIcon icon={faPen} size="lg" />
-        <h6 className="mt-2">EDIT WEIGHT</h6>
+        <h6 className="mt-2">EDIT</h6>
       </button>
       <Modal
         isOpen={modalIsOpen}
