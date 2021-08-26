@@ -1,8 +1,8 @@
-# MERN application with GraphQL
+# CRUD application with GraphQL
 
 https://pawly.vercel.app/
 
-Pawly is a puppy health management application. Able to keep puppy's weight, what they eat, and how long they do exercise.
+Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.
 
 > ## Front End
 
