@@ -24,40 +24,39 @@ const Weight = () => {
     return result?.find((data) => data.day === today);
   }
   const todayData = getDataByDay();
-  const todayWeight = todayData?.weightNum;
-
-  // useEffect(() => {
-  //   try {
-  //     setIsLoading(true);
-  //     if (data) {
-  //       setResult(data.weights);
-  //     }
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }, [data]);
 
   useEffect(() => {
-    if (data) {
-      setResult(data.weights);
+    try {
+      setIsLoading(true);
+      if (data) {
+        setResult(data.weights);
+      }
+    } finally {
+      setIsLoading(false);
     }
   }, [data]);
 
+  // useEffect(() => {
+  //   if (data) {
+  //     setResult(data.weights);
+  //   }
+  // }, [data]);
+
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Loading isLoading={isLoading} />
-      ) : ( */}
-      <div className="w-screen h-screen flex flex-col items-center justify-center">
-        <TodayWeight todayData={todayData} today={today} />
-        <Graph result={result} />
-        <div className="flex">
-          <AddWeight today={today} />
-          <EditWeight today={today} todayData={todayData} />
-          <DeleteWeight todayData={todayData} />
+      ) : (
+        <div className="w-screen h-screen flex flex-col items-center justify-center">
+          <TodayWeight todayData={todayData} today={today} />
+          <Graph result={result} />
+          <div className="flex">
+            <AddWeight today={today} />
+            <EditWeight today={today} todayData={todayData} />
+            <DeleteWeight todayData={todayData} />
+          </div>
         </div>
-      </div>
-      {/* )} */}
+      )}
     </>
   );
 };

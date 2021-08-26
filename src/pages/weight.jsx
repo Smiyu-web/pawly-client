@@ -8,16 +8,16 @@ const weight = () => {
   const description = "";
   const title = "pawly - weight";
   return (
-    <motion.div
-      initial={{ x: 300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: -300, opacity: 0 }}
-      transition={{ ease: "easeOut", duration: 1 }}
-    >
-      <Layout description={description} title={title}>
+    <Layout description={description} title={title}>
+      <motion.div
+        initial={{ x: 300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -300, opacity: 0 }}
+        transition={{ ease: "easeOut", duration: 1 }}
+      >
         <Weight />
-      </Layout>
-    </motion.div>
+      </motion.div>
+    </Layout>
   );
 };
 

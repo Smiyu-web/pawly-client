@@ -62,6 +62,7 @@ const EditWeight = ({ today, todayData }) => {
       })
       .finally(() => {
         closeModal();
+        location.reload();
       });
   };
 

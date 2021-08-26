@@ -57,6 +57,7 @@ const AddWeight = ({ today }) => {
       })
       .finally(() => {
         closeModal();
+        location.reload();
       });
   };
 
