@@ -32,6 +32,9 @@ const DeleteWeight = ({ todayData }) => {
           text: "Cannot delete weight.",
           icon: "error",
         });
+      })
+      .finally(() => {
+        location.reload();
       });
   };
 
