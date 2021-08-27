@@ -32,3 +32,15 @@ Pawly is a puppy health management application. Able to keep a redord of puppy's
 - MongoDB
 - Express
   - Apollo Server Express
+
+
+
+> ## PWA（Progressive Web Apps）
+
+Pawly is a puppy health management application. Able to keep a redord of puppy's weight, what they eat, and how long they do exercise.
+
+https://user-images.githubusercontent.com/70537611/131127253-f19c55b2-8654-4334-953a-08259c727da7.mov
+
+
+
+
