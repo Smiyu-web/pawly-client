@@ -12,6 +12,7 @@ Pawly is a puppy health management application. Able to keep a redord of puppy's
 
 - React
 
+  - Next.js
   - Redux(toolkit)
   - Apollo Client(GraphQL)
 
