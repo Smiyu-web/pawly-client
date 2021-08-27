@@ -16,7 +16,7 @@ class MyDocument extends Document {
             name="keywords"
             content="puppy, dog, health, management, record, weight, meal, exercise, graph"
           />
-          <meta name="author" content="Hiro, Miyu Setoyama" />
+          <meta name="author" content="Hiroshi Egawa, Miyu Setoyama" />
         </Head>
         <body>
           <Main />
