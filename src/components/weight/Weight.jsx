@@ -11,6 +11,7 @@ import DeleteWeight from "./DeleteWeight";
 
 const Weight = () => {
   const { error, loading, data } = useQuery(LOAD_WEIGHTS);
+
   const [result, setResult] = useState();
   const [isLoading, setIsLoading] = useState(true);
 

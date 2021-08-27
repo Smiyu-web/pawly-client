@@ -5,6 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png"></link>
           <link rel="shortcut icon" href="/favicon.ico" />
@@ -13,7 +15,7 @@ class MyDocument extends Document {
             name="keywords"
             content="puppy, dog, health, management, record, weight, meal, exercise, graph"
           />
-          <meta name="author" content="Hiro, Miyu Setoyama" />
+          <meta name="author" content="Hiroshi Egawa, Miyu Setoyama" />
         </Head>
         <body>
           <Main />
